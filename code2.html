@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>TravelGo - Your Travel Companion</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f9fa;
+    }
+
+    header {
+      background: #0099cc;
+      color: white;
+      padding: 20px 40px;
+      text-align: center;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 15px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 80px 20px;
+      background: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center/cover;
+      color: white;
+    }
+
+    .hero h1 {
+      font-size: 3em;
+      margin-bottom: 10px;
+    }
+
+    .hero button {
+      padding: 12px 24px;
+      background: #ff6600;
+      border: none;
+      color: white;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .destinations {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 40px 20px;
+      background-color: #fff;
+    }
+
+    .card {
+      width: 280px;
+      margin: 15px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .card-body {
+      padding: 15px;
+    }
+
+    .card-body h3 {
+      margin-top: 0;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0099cc;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>TravelGo</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Destinations</a>
+      <a href="#">Bookings</a>
+      <a href="#">Contact</a>
+    </nav>
+  </header>
+
+  <div class="hero">
+    <h1>Explore the World</h1>
+    <p>Book your next adventure now!</p>
+    <button onclick="showAlert()">Start Your Journey</button>
+  </div>
+
+  <section class="destinations">
+    <div class="card">
+      <img src="https://source.unsplash.com/300x200/?paris" alt="Paris">
+      <div class="card-body">
+        <h3>Paris</h3>
+        <p>The city of lights and love. Discover iconic landmarks and culture.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/300x200/?bali" alt="Bali">
+      <div class="card-body">
+        <h3>Bali</h3>
+        <p>Experience tropical paradise with serene beaches and temples.</p>
+      </div>
+    </div>
+    <div class="card">
+      <img src="https://source.unsplash.com/300x200/?newyork" alt="New York">
+      <div class="card-body">
+        <h3>New York</h3>
+        <p>The city that never sleeps. Lights, skyscrapers, and energy.</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    &copy; 2025 TravelGo. All rights reserved.
+  </footer>
+
+  <script>
+    function showAlert() {
+      alert("Ready to explore? Let's go!");
+    }
+  </script>
+
+</body>
+</html>
