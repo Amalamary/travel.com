@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seat Booking | TravelGo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f7f8;
+    }
+
+    header {
+      background: #0077b6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0077b6;
+    }
+
+    label {
+      display: block;
+      margin-top: 20px;
+      font-weight: bold;
+    }
+
+    select, input[type="date"], input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      margin-top: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      margin-top: 30px;
+      width: 100%;
+      padding: 14px;
+      background: #ff6f00;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #e65c00;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #0077b6;
+      color: white;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>TravelGo Seat Booking</h1>
+  </header>
+
+  <div class="container">
+    <h2>Book Your Journey</h2>
+    <form action="select-seats.html" method="GET">
+      <label for="from">From:</label>
+      <select id="from" name="from" required>
+        <option value="">Select departure</option>
+        <option value="newyork">New York</option>
+        <option value="chicago">Chicago</option>
+        <option value="losangeles">Los Angeles</option>
+      </select>
+
+      <label for="to">To:</label>
+      <select id="to" name="to" required>
+        <option value="">Select destination</option>
+        <option value="boston">Boston</option>
+        <option value="seattle">Seattle</option>
+        <option value="miami">Miami</option>
+      </select>
+
+      <label for="date">Travel Date:</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="seats">Number of Seats:</label>
+      <input type="number" id="seats" name="seats" min="1" max="10" required />
+
+      <button type="submit">Proceed to Seat Selection</button>
+    </form>
+  </div>
+
+  <footer>
+    &copy; 2025 TravelGo. Safe Travels!
+  </footer>
+
+</body>
+</html>

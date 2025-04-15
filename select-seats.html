@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Select Seats | TravelGo</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f7f8;
+      margin: 0;
+    }
+
+    header {
+      background: #0077b6;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #0077b6;
+      margin-bottom: 30px;
+    }
+
+    .seats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 15px;
+      justify-items: center;
+      padding: 10px;
+    }
+
+    .seat {
+      width: 40px;
+      height: 40px;
+      background: #ccc;
+      border-radius: 5px;
+      cursor: pointer;
+      text-align: center;
+      line-height: 40px;
+      font-weight: bold;
+    }
+
+    .seat.selected {
+      background: #28a745;
+      color: white;
+    }
+
+    .seat.booked {
+      background: #6c757d;
+      color: white;
+      pointer-events: none;
+    }
+
+    .legend {
+      display: flex;
+      justify-content: space-around;
+      margin: 20px 0;
+    }
+
+    .legend div {
+      display: flex;
+      align-items: center;
+    }
+
+    .legend div span {
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      margin-right: 8px;
+      border-radius: 3px;
+    }
+
+    .btn {
+      margin-top: 20px;
+      width: 100%;
+      padding: 14px;
+      background: #ff6f00;
+      color: white;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn:hover {
+      background: #e65c00;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Select Your Seat</h1>
+  </header>
+
+  <div class="container">
+    <h2>Choose Your Seat(s)</h2>
+
+    <div class="legend">
+      <div><span style="background:#ccc;"></span>Available</div>
+      <div><span style="background:#28a745;"></span>Selected</div>
+      <div><span style="background:#6c757d;"></span>Booked</div>
+    </div>
+
+    <div class="seats" id="seatGrid">
+      <!-- Seats will be created by JavaScript -->
+    </div>
+
+    <button class="btn" onclick="confirmSeats()">Confirm Booking</button>
+  </div>
+
+  <script>
+    const seatGrid = document.getElementById('seatGrid');
+    const totalSeats = 24; // 6 rows, 4 columns
+    const bookedSeats = [3, 7, 13, 18]; // Example booked seats
+
+    for (let i = 1; i <= totalSeats; i++) {
+      const seat = document.createElement('div');
+      seat.classList.add('seat');
+      seat.textContent = i;
+
+      if (bookedSeats.includes(i)) {
+        seat.classList.add('booked');
+      } else {
+        seat.addEventListener('click', () => {
+          seat.classList.toggle('selected');
+        });
+      }
+
+      seatGrid.appendChild(seat);
+    }
+
+    function confirmSeats() {
+      const selected = document.querySelectorAll('.seat.selected');
+      if (selected.length === 0) {
+        alert("Please select at least one seat.");
+        return;
+      }
+
+      const seatNumbers = Array.from(selected).map(seat => seat.textContent);
+      alert(`You have selected seat(s): ${seatNumbers.join(", ")}`);
+      // Here, you can send this data to a backend or next step
+    }
+  </script>
+
+</body>
+</html>
